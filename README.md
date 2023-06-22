@@ -1,35 +1,52 @@
-# C++ Developer Test (EN)
+# C++ Entwicklertest
 
-## Goal
+## Szenario
 
-We need to create a library that lets us manage the customers in our store. This library must have two classes:
+Deine Firma hat in den letzten 30 Jahren einige verschiedene Programme in C und C++ entwickelt. Um den Entwicklungskosten gering zu halten und den Datenaustausch zwischen den Programmen zu ermöglichen, wurden von Beginn an Bibliotheken benutzt. Einige dieser alten Bibliotheken sollen nun modernisiert und erweitert werden. C-Programme werden in C++ Code überführt.
 
-1. A customer repository that can:
-    1. Add customers
-    2. Retrieve all customers
-    3. Retrieve a single customer by their Id
-2. A customer formatter that can:
-    1. Retrieve nicely-formatted display text for a single customer by their Id
+## Aufgaben
 
-When formatting customer data for display, please use the following format:
-- If the customer is found:
-    - `<last name>, <first name>, <zip code> <city>, <favorite color>`
-    - Example: `Müller, Hans, 67742 Lauterecken, blue`
-- If no customer is found:
-    - `(no customer)`
+1. Die Datei [customer.h](customer.h) enthält eine C-Datenstruktur, in der Kundendaten gespeichert werden können. Im Unternehmen nutzen verschiedene Applikationen diesen Header. Seit kurzem allerdings keine Programme mehr in C. 
+Führe ein Refactoring des Headers customer.h in modernes C++ durch. Ziel ist es das neue Programme und Bibliotheken auf einen modernes Kundendaten-Objekt zurückgreifen können. Stelle dabei aber auch sicher, dass der Header zu schon bestehenden Programmen kompatibel bleibt.
 
-## Acceptance Criteria
 
-- The library must use the customer data structure in the file [customer.h](customer.h). This is a C header that the company uses in many other projects and it may not be modified.
-- Customers should be stored in-memory. (No database is necessary.)
-- There are plans to extend the library so it can store customers elsewhere, such as in a file, database, or a cloud storage service. Please design your architecture so we can add this in the future without rewrites.
-- The customer formatter should retrieve customers itself using any kind of customer repository.
-- Write the necessary integration and unit tests to ensure that this library behaves as expected and can be safely extended or refactored.
-    - Unit tests should use mocked dependencies.
+2. Schreibe eine Bibliothek, die Kundendaten speichern kann. Die Bibliothek soll aus zwei Klassen bestehen:
 
-## Bonus Points
+	1. Ein Kunden-Archiv, das folgende Funktionen hat:
+		1. Kunden hinzufügen
+		2. Alle Kunden ausgeben
+		3. Kundendaten zu einer ID ausgeben
+	2. Ein Kundendatenformatierer, der folgendes kann:
+		1. Gibt die Kundendaten zu einer gegebenen ID als schön formatierten Ausgabetext aus.
 
-Make a small MFC application to display customers.
-- This application doesn't need to allow users to create customers - only retrieve them and show them to the user.
-- For simplicity, the users can be hard-coded into the project.
-- The goal is to demonstrate a basic knowledge of MFC. The UX may be as quick and dirty as possible :)
+
+3. Schreibe eine Konsolenapplikation mit folgenden Funktionen:
+	- Hinzufügen eines Kunden zum Archiv
+	- Ausgeben der Kundendaten zu einer ID
+	- Ausgeben der Liste aller gespeicherten Kundendaten
+	
+##Akzeptanzkriterien
+
+- Der Header [customer.h](customer.h) ist zu modernem C++ refactored. 
+- Alte Programme, die den Header [customer.h](customer.h) einbinden, müssen nicht geändert werden.
+- Die Bibliothek muss die neue Datenstruktur aus der Datei [customer.h](customer.h) benutzen. 
+- Die Kunden sollen vorerst in-memory gespeichert werden. (Keine Datenbank benötigt)
+- Es gibt Pläne die Bibliothek zu erweitern, so dass sie die Kundendaten auch woanders speichern kann, wie zum Beispiel in einer Datei, einer Datenbank oder in einem Cloud-Speicher. Schreibe die Bibliothek so, dass diese Änderungen in der Zukunft hinzugefügt werden könnten ohne den bestehenden Code ändern zu müssen.
+- Der Kundendatenformatierer ruft die Kundendaten selbständig aus dem Kunden-Archiv. (Unabhängig von der Speichermethode des Archivs)
+- Die Kundendaten sollen für den Ausgabetext in folgendem Format formatiert sein:
+	- Wenn der Kunde gefunden wurde:
+		- <Nachname>, <Vorname>, <Postleitzahl> <Stadt>, <Lieblingsfarbe>
+		- Beispiel: "Müller, Hans, 677742 Lauterecken, Blau"
+	- Wenn kein Kunde gefunden wurde:
+		- "(kein Kunde)"
+- Mit der Konsolenapplikation können beliebig viele Kunden angelegt und aus dem Archiv abgerufen werden.
+- Die Konsolenapplikation stellt sicher, dass nur vollständig erfasste Kundendaten im Archiv gespeichert werden.
+		
+## Definition of Done
+- Die Akzeptanzkriterien sind erfüllt.
+- Es existieren Unit-Tests, die Funktionalität des Codes so testen, dass dieser problemlos refactored oder erweitert werden könnte.
+	- Unit-Tests sollten mocked dependencies benutzen.
+- Es existieren Integrationstests.
+- Alle Tests wurden lokal ausgeführt und bestanden.
+- Der Compiler gibt keine Warnings aus.
+- Das Programm kompiliert und lässt sich starten.
