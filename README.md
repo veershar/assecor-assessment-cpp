@@ -6,11 +6,11 @@ Deine Firma hat in den letzten 30 Jahren einige verschiedene Programme in C und 
 
 ## Aufgaben
 
-1. Die Datei [customer.h](customer.h) enthält eine C-Datenstruktur, in der Kundendaten gespeichert werden können. Im Unternehmen nutzen verschiedene Applikationen diesen Header. Seit kurzem allerdings keine Programme mehr in C. 
+1. Die Datei [customer.h](customer.h) enthält eine C-Datenstruktur, in der Kundendaten gespeichert werden können. Im Unternehmen nutzen verschiedene Applikationen diesen Header. Seit kurzem allerdings keine Programme mehr in C.
 Führe ein Refactoring des Headers customer.h in modernes C++ durch. Ziel ist es das neue Programme und Bibliotheken auf einen modernes Kundendaten-Objekt zurückgreifen können. Stelle dabei aber auch sicher, dass der Header zu schon bestehenden Programmen kompatibel bleibt.
 
 
-2. Schreibe eine Bibliothek, die Kundendaten speichern kann. Die Bibliothek soll aus zwei Klassen bestehen:
+3. Schreibe eine Bibliothek, die Kundendaten speichern kann. Die Bibliothek soll aus zwei Klassen bestehen:
 
 	1. Ein Kunden-Archiv, das folgende Funktionen hat:
 		1. Kunden hinzufügen
@@ -20,12 +20,12 @@ Führe ein Refactoring des Headers customer.h in modernes C++ durch. Ziel ist es
 		1. Gibt die Kundendaten zu einer gegebenen ID als schön formatierten Ausgabetext aus.
 
 
-3. Schreibe eine Konsolenapplikation mit folgenden Funktionen:
-	- Hinzufügen eines Kunden zum Archiv
-	- Ausgeben der Kundendaten zu einer ID
-	- Ausgeben der Liste aller gespeicherten Kundendaten
+4. Schreibe eine Konsolenapplikation mit folgenden Funktionen:
+	1. Hinzufügen eines Kunden zum Archiv
+	2. Ausgeben der Kundendaten zu einer ID
+	3. Ausgeben der Liste aller gespeicherten Kundendaten
 	
-##Akzeptanzkriterien
+## Akzeptanzkriterien
 
 - Der Header [customer.h](customer.h) ist zu modernem C++ refactored. 
 - Alte Programme, die den Header [customer.h](customer.h) einbinden, müssen nicht geändert werden.
@@ -35,7 +35,7 @@ Führe ein Refactoring des Headers customer.h in modernes C++ durch. Ziel ist es
 - Der Kundendatenformatierer ruft die Kundendaten selbständig aus dem Kunden-Archiv. (Unabhängig von der Speichermethode des Archivs)
 - Die Kundendaten sollen für den Ausgabetext in folgendem Format formatiert sein:
 	- Wenn der Kunde gefunden wurde:
-		- <Nachname>, <Vorname>, <Postleitzahl> <Stadt>, <Lieblingsfarbe>
+		- `<Nachname>, <Vorname>, <Postleitzahl> <Stadt>, <Lieblingsfarbe>`
 		- Beispiel: "Müller, Hans, 677742 Lauterecken, Blau"
 	- Wenn kein Kunde gefunden wurde:
 		- "(kein Kunde)"
