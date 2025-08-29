@@ -18,6 +18,11 @@ struct _CUSTOMER {
     int favorite_color;
 };
 
-typedef struct _CUSTOMER CUSTOMER;
+#ifdef CXX_MODERN
+    #include "customer_impl_cxx.h"
+    typedef struct _CUSTOMER_CXX CUSTOMER;
+#else
+    typedef struct _CUSTOMER CUSTOMER;
+#endif
 
 #endif // ifndef __DEFINED_CUSTOMER_H
