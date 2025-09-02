@@ -1,0 +1,88 @@
+INTEGRATION TO MAIN BRANCH: customer.h: Code Refactoring
+---
+Refactored file name: customer_impl_cxx.h
+Unit tests: unittestAlteHeaderLegacyC unittestAlteHeaderLegacyCpp unittestHeaderRefactoredCxx
+>> Check 1: Der Header ist zu modernem C++ refactored <<
+>> Check 2: Alte Programme, die den Header einbinden, müssen nicht geändert werden <<
+>> Check 3: Die Header ist zu modernem C++ refactored <<
+>> Check 4: Check for compiler warnings <<
+---
+CMAKE: CONFIGURE ------------ 
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Configuring done (0.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/htc-ws-001-hm/Desktop/Workspace/dev/cxx/projectBuilds/remote-assessment-cpp
+CMAKE: CONFIGURE ------------ 
+CMAKE: BUILD ------------ 
+[ 16%] Building CXX object CMakeFiles/unittestAlteHeaderLegacyC.dir/test/aufgabeOneHeaderRefactor/unittestAlteHeaderLegacyC.cc.o
+[ 33%] Linking CXX executable unittestAlteHeaderLegacyC
+[ 33%] Built target unittestAlteHeaderLegacyC
+[ 50%] Building CXX object CMakeFiles/unittestAlteHeaderLegacyCpp.dir/test/aufgabeOneHeaderRefactor/unittestAlteHeaderLegacyCpp.cpp.o
+[ 66%] Linking CXX executable unittestAlteHeaderLegacyCpp
+[ 66%] Built target unittestAlteHeaderLegacyCpp
+[ 83%] Building CXX object CMakeFiles/unittestHeaderRefactoredCxx.dir/test/aufgabeOneHeaderRefactor/unittestHeaderRefactoredCxx.cpp.o
+[100%] Linking CXX executable unittestHeaderRefactoredCxx
+[100%] Built target unittestHeaderRefactoredCxx
+CMAKE: BUILD ------------ 
+Running main() from /home/htc-ws-001-hm/Desktop/Workspace/dev/cxx/dependencies/googletest/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CustomerHeaderCLegacyCode
+[ RUN ] CustomerHeaderCLegacyCode.PlainOldDataStrObjCreation
+[ OK ] CustomerHeaderCLegacyCode.PlainOldDataStrObjCreation (0 ms)
+[----------] 1 test from CustomerHeaderCLegacyCode (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[ PASSED ] 1 test.
+Running main() from /home/htc-ws-001-hm/Desktop/Workspace/dev/cxx/dependencies/googletest/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CustomerHeaderCppLegacyCode
+[ RUN ] CustomerHeaderCppLegacyCode.PlainOldDataStrObjCreation
+[ OK ] CustomerHeaderCppLegacyCode.PlainOldDataStrObjCreation (0 ms)
+[----------] 1 test from CustomerHeaderCppLegacyCode (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[ PASSED ] 1 test.
+Running main() from /home/htc-ws-001-hm/Desktop/Workspace/dev/cxx/dependencies/googletest/googletest/src/gtest_main.cc
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from CustomerHeaderRefactor
+[ RUN ] CustomerHeaderRefactor.ModernObjectCreation
+[ OK ] CustomerHeaderRefactor.ModernObjectCreation (0 ms)
+[ RUN ] CustomerHeaderRefactor.DynamicArrayGrowth
+[ OK ] CustomerHeaderRefactor.DynamicArrayGrowth (0 ms)
+[ RUN ] CustomerHeaderRefactor.ModernObjectInitialization
+[ OK ] CustomerHeaderRefactor.ModernObjectInitialization (0 ms)
+[ RUN ] CustomerHeaderRefactor.ObjWithIncompleteFieldInput
+[ OK ] CustomerHeaderRefactor.ObjWithIncompleteFieldInput (0 ms)
+[ RUN ] CustomerHeaderRefactor.CustomerObjCopiesAnother
+[ OK ] CustomerHeaderRefactor.CustomerObjCopiesAnother (0 ms)
+[ RUN ] CustomerHeaderRefactor.CustomerObjMovesData
+[ OK ] CustomerHeaderRefactor.CustomerObjMovesData (0 ms)
+[ RUN ] CustomerHeaderRefactor.CustomerObjCopyAssignment
+[ OK ] CustomerHeaderRefactor.CustomerObjCopyAssignment (0 ms)
+[ RUN ] CustomerHeaderRefactor.CustomerObjMoveAssignment
+[ OK ] CustomerHeaderRefactor.CustomerObjMoveAssignment (0 ms)
+[----------] 8 tests from CustomerHeaderRefactor (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (0 ms total)
+[ PASSED ] 8 tests.
+Aufgabe 1: End of Integration test
