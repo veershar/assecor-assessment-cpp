@@ -24,17 +24,17 @@ TEST(CustomerHeaderRefactor, ModernObjectCreation)
 TEST(CustomerHeaderRefactor, DynamicArrayGrowth)
 {
     // Test suite "CustomerHeaderRefactor" 
-    // Test case: 
+    // Test case: Arrays kann mit grosse daten length arbeiten
+    // In alte customer.h muss dies Testcase nicht Erfolgreich sein    
     CUSTOMER obj{};
     obj.first_name = "Some very Some very Some very Some very Some very";
-    // Should fail in the Plain old data structure customer.h
     EXPECT_EQ("Some very Some very Some very Some very Some very", obj.first_name);
 }    
 
 TEST(CustomerHeaderRefactor, ModernObjectInitialization)
 {
     // Test suite "CustomerHeaderRefactor" 
-    // Test case: 
+    // Test case: Initializierungs eines Objektes mit modernen C++
     CUSTOMER obj{2, "David", "Gz", "23421", "Gasd", COLOR_GREEN};
     EXPECT_EQ(2, obj.id);
     EXPECT_EQ("David", obj.first_name);
@@ -47,7 +47,7 @@ TEST(CustomerHeaderRefactor, ModernObjectInitialization)
 TEST(CustomerHeaderRefactor, ObjWithIncompleteFieldInput)
 {
     // Test suite "CustomerHeaderRefactor" 
-    // Test case: 
+    // Test case: Objekt können mit weniger Parameter initializiert werden
     CUSTOMER obj{2, "David", "Gz"};
     EXPECT_EQ(2, obj.id);
     EXPECT_EQ("David", obj.first_name);
@@ -57,7 +57,7 @@ TEST(CustomerHeaderRefactor, ObjWithIncompleteFieldInput)
 TEST(CustomerHeaderRefactor, CustomerObjCopiesAnother)
 {
     // Test suite "CustomerHeaderRefactor" 
-    // Test case: 
+    // Test case: Ein normalle Kopie eines Objekt 
     CUSTOMER obj1{2, "David", "Gz", "23421", "Berlin", COLOR_VIOLET};
     CUSTOMER obj2{obj1};    
     EXPECT_EQ(obj1.id, obj2.id);
@@ -71,7 +71,7 @@ TEST(CustomerHeaderRefactor, CustomerObjCopiesAnother)
 TEST(CustomerHeaderRefactor, CustomerObjMovesData)
 {
     // Test suite "CustomerHeaderRefactor" 
-    // Test case: 
+    // Test case: Inhalt von ein Objekt ist zu andere Objekt geschoben.
     CUSTOMER obj1{2, "David", "Gz", "23421", "Berlin", COLOR_VIOLET};
     CUSTOMER obj2{std::move(obj1)};    
     EXPECT_EQ(0, obj1.id);
@@ -82,11 +82,10 @@ TEST(CustomerHeaderRefactor, CustomerObjMovesData)
     EXPECT_EQ(0, obj1.favorite_color);
 }
 
-
 TEST(CustomerHeaderRefactor, CustomerObjCopyAssignment)
 {
     // Test suite "CustomerHeaderRefactor" 
-    // Test case: 
+    // Test case: Copy assignment von ein Objekt zu Andere
     CUSTOMER obj1{2, "David", "Gz", "23421", "Berlin", COLOR_VIOLET};
     CUSTOMER obj2;
     obj2 = obj1;    
@@ -101,7 +100,7 @@ TEST(CustomerHeaderRefactor, CustomerObjCopyAssignment)
 TEST(CustomerHeaderRefactor, CustomerObjMoveAssignment)
 {
     // Test suite "CustomerHeaderRefactor" 
-    // Test case: 
+    // Test case: Copy assignment von ein Objekt zu Andere
     CUSTOMER obj1{2, "David", "Gz", "23421", "Berlin", COLOR_VIOLET};
     CUSTOMER obj2;
     obj2 = std::move(obj1);    

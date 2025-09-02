@@ -8,15 +8,14 @@
 
 #include "customer.h"
 #include <gtest/gtest.h>
-#include <iostream>
-
 
 namespace 
 {
 TEST(CustomerHeaderCppLegacyCode, PlainOldDataStrObjCreation)
 {
     // Test suite "CustomerHeaderCppLegacyCode" 
-    // Test case: 
+    // Test case: Cpp-Code die mit refactored customer.h header funktionert. 
+    // Existiert code muss nicht geändert werden
     CUSTOMER obj = {1, "David", "Webb", "12345", "Somecity", COLOR_BLUE};
     EXPECT_EQ(1, obj.id);
     EXPECT_STREQ("David", obj.first_name);

@@ -16,7 +16,8 @@ namespace
 TEST(CustomerHeaderCLegacyCode, PlainOldDataStrObjCreation)
 {
     // Test suite "CustomerHeaderCLegacyCode" 
-    // Test case: 
+    // Test case: C-Code die mit refactored customer.h header funktionert. 
+    // Existiert code muss nicht geändert werden 
     CUSTOMER obj = {1, "James", "Webb", "12345", "Somecity", COLOR_BLUE};
     EXPECT_EQ(1, obj.id);
     EXPECT_STREQ("James", obj.first_name);
