@@ -78,6 +78,37 @@ struct _CUSTOMER_CXX
                 favorite_color == customer.favorite_color; 
     }
 
+    // In Felder der Customer Datentyp, werte hinzufügen
+    // wie Array indexing.
+    void insert(int idx, std::string fieldValue)
+    { 
+        if(idx == 0)
+        { 
+            id = std::stoi(fieldValue);
+        }
+        else if (idx == 1)
+        {
+            first_name = fieldValue;
+        }
+        else if (idx == 2)
+        {
+            last_name = fieldValue;
+        }
+        else if (idx == 3)
+        {
+            zip_code = fieldValue;
+        }
+        else if (idx == 4)
+        {
+            city = fieldValue;
+        }    
+        else if (idx == 5)
+        {
+            favorite_color = std::stoi(fieldValue);
+        }
+    }
+
+    
     int id;
     std::string first_name;
     std::string last_name;

@@ -43,6 +43,8 @@ public:
     void save(const std::vector<CUSTOMER>& listCustomers) override 
     {
         std::cout << "Saving data to text file" << std::endl;
+        for(auto& ref: listCustomers)
+            std::cout << ref.id;
     }
 
     void close(const int filedescriptor) override
@@ -72,6 +74,8 @@ public:
     void save(const std::vector<CUSTOMER>& listCustomers) override 
     {
         std::cout << "Writing data to cloud" << std::endl;
+        for(auto& ref: listCustomers)
+            std::cout << ref.id;
     }
 
     void close(const int filedescriptor) override
@@ -106,6 +110,8 @@ public:
     void save(const std::vector<CUSTOMER>& listCustomers) override 
     {
         std::cout << "Saving to the database: " << std::endl;
+        for(auto& ref: listCustomers)
+            std::cout << ref.id;
     }
 
     void close(const int filedescriptor) override
@@ -137,7 +143,7 @@ public:
     KundenData(const std::vector<CUSTOMER>& kundenData, iKundenDataSpeichern* saveData, iKundenDataSpeichern* mockObj):
         mKundenData{kundenData}, mSaveData{saveData}, mMockObj{mockObj}
     {
-        int mFd = mSaveData->open(); 
+        mSaveData->open(); 
         mMockObj->open();
     }
 
@@ -158,7 +164,7 @@ private:
     std::vector<CUSTOMER> mKundenData;
     iKundenDataSpeichern* mSaveData;
     iKundenDataSpeichern* mMockObj;
-    int mFd;
+    int mFd = 0;
 };
 
 

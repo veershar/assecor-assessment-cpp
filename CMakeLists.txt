@@ -13,6 +13,7 @@ set(UNIT_TEST_FOLDER "test")
 set(NAME_KUNDEN_LIB "KundenDaten")
 set(NAME_KUNEDEN_LIB_EXT )
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/lib/includes")
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/customer-cli")
 set(RUNWORK 1)
 
 function (aufgabeOne_CodeRefactor)
@@ -53,14 +54,17 @@ endfunction()
 
 function (aufgabe_KonsoleAnwendung)
     set(AUFGABE_CLI "${UNIT_TEST_FOLDER}/aufgabeThreeKundenCli")
-    set(UNIT_TEST_NAMES unittestKundenCli)    
-    set(UNIT_TEST_FILE_NAMES unittestKundenCli.cpp)
+    set(UNIT_TEST_NAMES unittestKundenCli unittestUserInputField)    
+    set(UNIT_TEST_FILE_NAMES unittestKundenCli.cpp unittestUserInputField.cpp)
     add_executable(
         ${PROJECT_NAME}_cli 
-        ${CMAKE_CURRENT_SOURCE_DIR}/customer-cli/customer.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/customer-cli/customer-cli-main.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/customer-cli/KundenDaten.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/customer-cli/ErrorHandling.cpp
     )
+    target_compile_options("${PROJECT_NAME}_cli" PRIVATE -DCXX_MODERN -Wall -Wextra -Wpedantic)
     target_link_libraries(${PROJECT_NAME}_cli PUBLIC ${NAME_KUNDEN_LIB})
-    runUnitTests("${UNIT_TEST_NAMES}" "${UNIT_TEST_FILE_NAMES}" "${AUFGABE_CLI}")
+    runUnitTests("${UNIT_TEST_NAMES}" "${UNIT_TEST_FILE_NAMES}" "${AUFGABE_CLI}" )
 endfunction()
 
 function(runUnitTests unitTestNames unitTestFileNames unitTestFolder)
@@ -69,9 +73,14 @@ function(runUnitTests unitTestNames unitTestFileNames unitTestFolder)
         LIST(GET unitTestFileNames "${COUNTER}" unitTestFileName)
         set(TARGET_NAME "${unitTestName}")
         set(SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/${unitTestFolder}/${unitTestFileName}")
-        
+        if( "${unitTestFolder}" MATCHES "Three" )
+            set(SOURCE  "${CMAKE_CURRENT_SOURCE_DIR}/${unitTestFolder}/${unitTestFileName}" 
+                        "${CMAKE_CURRENT_SOURCE_DIR}/customer-cli/KundenDaten.cpp" 
+                        "${CMAKE_CURRENT_SOURCE_DIR}/customer-cli/ErrorHandling.cpp")    
+        endif()        
         add_executable( "${TARGET_NAME}" "${SOURCE}" )
         target_compile_options("${TARGET_NAME}" PRIVATE -Wall -Wextra -Wpedantic)
+
         if(NOT "${TARGET_NAME}" MATCHES "Alte")
             target_compile_options("${TARGET_NAME}" PRIVATE -DCXX_MODERN)
         endif()
