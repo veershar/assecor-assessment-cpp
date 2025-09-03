@@ -1,3 +1,12 @@
 #include <iostream>
+#include "KundenDataFormatter.h"
+#include "KundenArchiv.h"
+#include "KundenSpeichern.h"
+#include "customer.h"
 
-int main() { return 0;}
+
+int main() 
+{ 
+    KundenArchiv customerArchiv;
+    return 0;
+}
