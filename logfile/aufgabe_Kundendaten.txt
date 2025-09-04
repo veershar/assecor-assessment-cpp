@@ -1,0 +1,309 @@
+===============================================================================
+BUILD INFORMATION
+===============================================================================
+OS:                           Linux Mint, x86-64
+KERNEL:                       5.15.0-152-generic
+CMAKE VERSION:                3.27.0
+GOOGLE UNIT TEST:             1.16.0
+TESTED AND DEVELOPED ON:      Linux Mint, x86-64
+COMPILER:                     g++
+GENERATOR:                    Makefile
+C++ STANDARD:                 C++14, C++17
+
+===============================================================================
+PROJECT CONFIGURATION: START
+===============================================================================
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Configuring done (0.7s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/htc-ws-001-hm/Desktop/Workspace/dev/cxx/projectBuilds/remote-assessment-cpp
+===============================================================================
+PROJECT CONFIGURATION: END
+===============================================================================
+
+===============================================================================
+PROJECT BUILD: START
+===============================================================================
+[  3%] Building CXX object CMakeFiles/KundenDaten.dir/lib/src/KundenArchiv.cpp.o
+[  7%] Building CXX object CMakeFiles/KundenDaten.dir/lib/src/KundenDataFormatter.cpp.o
+[ 10%] Building CXX object CMakeFiles/KundenDaten.dir/lib/src/KundenSpeichern.cpp.o
+[ 14%] Linking CXX static library libKundenDaten.a
+[ 14%] Built target KundenDaten
+[ 17%] Building CXX object CMakeFiles/unittestAlteHeaderLegacyC.dir/test/aufgabeOneHeaderRefactor/unittestAlteHeaderLegacyC.cc.o
+[ 21%] Linking CXX executable unittestAlteHeaderLegacyC
+[ 21%] Built target unittestAlteHeaderLegacyC
+[ 25%] Building CXX object CMakeFiles/unittestAlteHeaderLegacyCpp.dir/test/aufgabeOneHeaderRefactor/unittestAlteHeaderLegacyCpp.cpp.o
+[ 28%] Linking CXX executable unittestAlteHeaderLegacyCpp
+[ 28%] Built target unittestAlteHeaderLegacyCpp
+[ 32%] Building CXX object CMakeFiles/unittestHeaderRefactoredCxx.dir/test/aufgabeOneHeaderRefactor/unittestHeaderRefactoredCxx.cpp.o
+[ 35%] Linking CXX executable unittestHeaderRefactoredCxx
+[ 35%] Built target unittestHeaderRefactoredCxx
+[ 39%] Building CXX object CMakeFiles/unittestsKundenArchiv.dir/test/aufgabeTwoImplLib/unittestsKundenArchiv.cpp.o
+[ 42%] Linking CXX executable unittestsKundenArchiv
+[ 42%] Built target unittestsKundenArchiv
+[ 46%] Building CXX object CMakeFiles/unittestKundenDataFormatter.dir/test/aufgabeTwoImplLib/unittestKundenDataFormatter.cpp.o
+[ 50%] Linking CXX executable unittestKundenDataFormatter
+[ 50%] Built target unittestKundenDataFormatter
+[ 53%] Building CXX object CMakeFiles/unittestLibraryExtension.dir/test/aufgabeTwoImplLib/unittestLibraryExtension.cpp.o
+[ 57%] Linking CXX executable unittestLibraryExtension
+[ 57%] Built target unittestLibraryExtension
+[ 60%] Building CXX object CMakeFiles/Kunden_cli.dir/customer-cli/customer-cli-main.cpp.o
+[ 64%] Building CXX object CMakeFiles/Kunden_cli.dir/customer-cli/KundenDaten.cpp.o
+[ 67%] Building CXX object CMakeFiles/Kunden_cli.dir/customer-cli/ErrorHandling.cpp.o
+[ 71%] Linking CXX executable Kunden_cli
+[ 71%] Built target Kunden_cli
+[ 75%] Building CXX object CMakeFiles/unittestKundenCli.dir/test/aufgabeThreeKundenCli/unittestKundenCli.cpp.o
+[ 78%] Building CXX object CMakeFiles/unittestKundenCli.dir/customer-cli/KundenDaten.cpp.o
+[ 82%] Building CXX object CMakeFiles/unittestKundenCli.dir/customer-cli/ErrorHandling.cpp.o
+[ 85%] Linking CXX executable unittestKundenCli
+[ 85%] Built target unittestKundenCli
+[ 89%] Building CXX object CMakeFiles/unittestUserInputField.dir/test/aufgabeThreeKundenCli/unittestUserInputField.cpp.o
+[ 92%] Building CXX object CMakeFiles/unittestUserInputField.dir/customer-cli/KundenDaten.cpp.o
+[ 96%] Building CXX object CMakeFiles/unittestUserInputField.dir/customer-cli/ErrorHandling.cpp.o
+[100%] Linking CXX executable unittestUserInputField
+[100%] Built target unittestUserInputField
+===============================================================================
+PROJECT BUILD: END
+===============================================================================
+
+
+#############################################################
+Aufgabe1: customer.h refactoring
+Check: Der Header ist zu modernem C++ refactored
+Check: Alte Programme, die den Header einbinden, müssen nicht geändert werden
+Check: Check for compiler warnings
+#############################################################
+
+===============================================================================
+UNIT TESTS: START --- >>>>> unittestAlteHeaderLegacyC <<<<< --- 
+===============================================================================
+Running main() from /home/htc-ws-001-hm/Desktop/Workspace/dev/cxx/dependencies/googletest/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CustomerHeaderCLegacyCode
+[ RUN ] CustomerHeaderCLegacyCode.PlainOldDataStrObjCreation
+[ OK ] CustomerHeaderCLegacyCode.PlainOldDataStrObjCreation (0 ms)
+[----------] 1 test from CustomerHeaderCLegacyCode (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[ PASSED ] 1 test.
+===============================================================================
+UNIT TESTS: END
+===============================================================================
+
+===============================================================================
+UNIT TESTS: START --- >>>>> unittestAlteHeaderLegacyCpp <<<<< --- 
+===============================================================================
+Running main() from /home/htc-ws-001-hm/Desktop/Workspace/dev/cxx/dependencies/googletest/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CustomerHeaderCppLegacyCode
+[ RUN ] CustomerHeaderCppLegacyCode.PlainOldDataStrObjCreation
+[ OK ] CustomerHeaderCppLegacyCode.PlainOldDataStrObjCreation (0 ms)
+[----------] 1 test from CustomerHeaderCppLegacyCode (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[ PASSED ] 1 test.
+===============================================================================
+UNIT TESTS: END
+===============================================================================
+
+===============================================================================
+UNIT TESTS: START --- >>>>> unittestHeaderRefactoredCxx <<<<< --- 
+===============================================================================
+Running main() from /home/htc-ws-001-hm/Desktop/Workspace/dev/cxx/dependencies/googletest/googletest/src/gtest_main.cc
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from CustomerHeaderRefactor
+[ RUN ] CustomerHeaderRefactor.ModernObjectCreation
+[ OK ] CustomerHeaderRefactor.ModernObjectCreation (0 ms)
+[ RUN ] CustomerHeaderRefactor.DynamicArrayGrowth
+[ OK ] CustomerHeaderRefactor.DynamicArrayGrowth (0 ms)
+[ RUN ] CustomerHeaderRefactor.ModernObjectInitialization
+[ OK ] CustomerHeaderRefactor.ModernObjectInitialization (0 ms)
+[ RUN ] CustomerHeaderRefactor.ObjWithIncompleteFieldInput
+[ OK ] CustomerHeaderRefactor.ObjWithIncompleteFieldInput (0 ms)
+[ RUN ] CustomerHeaderRefactor.CustomerObjCopiesAnother
+[ OK ] CustomerHeaderRefactor.CustomerObjCopiesAnother (0 ms)
+[ RUN ] CustomerHeaderRefactor.CustomerObjMovesData
+[ OK ] CustomerHeaderRefactor.CustomerObjMovesData (0 ms)
+[ RUN ] CustomerHeaderRefactor.CustomerObjCopyAssignment
+[ OK ] CustomerHeaderRefactor.CustomerObjCopyAssignment (0 ms)
+[ RUN ] CustomerHeaderRefactor.CustomerObjMoveAssignment
+[ OK ] CustomerHeaderRefactor.CustomerObjMoveAssignment (0 ms)
+[----------] 8 tests from CustomerHeaderRefactor (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (0 ms total)
+[ PASSED ] 8 tests.
+===============================================================================
+UNIT TESTS: END
+===============================================================================
+
+
+
+#############################################################
+Aufgabe2: Ein Bibliothek das kunden data speichern kann
+Check: Kann Kunden hinzufügen
+Check: Alle kunden ausgeben
+Check: Kundendaten zu einer ID ausgeben
+Check: Ein Formatted Kunden Daten für ein ID
+Check: Gultig ID: <Nachname>, <Vorname>, <Postleitzahl> <Stadt>, <Lieblingsfarbe>
+Check: Ungultig ID: (kein kunde)
+Check: Der Kundendatenformatierer ruft die Kundendaten selbständig aus dem Kunden-Archiv
+Check: Unit-Tests sollten mocked dependencies benutzen
+Check: Kundendaten auch woanders speichern kann z.B. DB, TextDatei, Cloud
+#############################################################
+
+===============================================================================
+UNIT TESTS: START --- >>>>> unittestsKundenArchiv <<<<< --- 
+===============================================================================
+Running main() from /home/htc-ws-001-hm/Desktop/Workspace/dev/cxx/dependencies/googletest/googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from KundenDatenLibKlassKundenArchiv
+[ RUN ] KundenDatenLibKlassKundenArchiv.BenutztNeuDatenStructure
+[ OK ] KundenDatenLibKlassKundenArchiv.BenutztNeuDatenStructure (0 ms)
+[ RUN ] KundenDatenLibKlassKundenArchiv.KundenHinfügen
+[ OK ] KundenDatenLibKlassKundenArchiv.KundenHinfügen (0 ms)
+[ RUN ] KundenDatenLibKlassKundenArchiv.AlleKundenAusgeben
+[ OK ] KundenDatenLibKlassKundenArchiv.AlleKundenAusgeben (0 ms)
+[ RUN ] KundenDatenLibKlassKundenArchiv.KundenDatenzuEinID
+[ OK ] KundenDatenLibKlassKundenArchiv.KundenDatenzuEinID (0 ms)
+[ RUN ] KundenDatenLibKlassKundenArchiv.CustomerLookupNonExistingIds
+[ OK ] KundenDatenLibKlassKundenArchiv.CustomerLookupNonExistingIds (0 ms)
+[----------] 5 tests from KundenDatenLibKlassKundenArchiv (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[ PASSED ] 5 tests.
+===============================================================================
+UNIT TESTS: END
+===============================================================================
+
+===============================================================================
+UNIT TESTS: START --- >>>>> unittestKundenDataFormatter <<<<< --- 
+===============================================================================
+Running main() from /home/htc-ws-001-hm/Desktop/Workspace/dev/cxx/dependencies/googletest/googletest/src/gtest_main.cc
+[==========] Running 2 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from KundenDatenFormattierer
+[ RUN ] KundenDatenFormattierer.DataFormattedByGultigID
+[ OK ] KundenDatenFormattierer.DataFormattedByGultigID (0 ms)
+[----------] 1 test from KundenDatenFormattierer (0 ms total)
+
+[----------] 1 test from CustomerDataFormatter
+[ RUN ] CustomerDataFormatter.DataFormattedByUngultigID
+[ OK ] CustomerDataFormatter.DataFormattedByUngultigID (0 ms)
+[----------] 1 test from CustomerDataFormatter (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 2 test suites ran. (0 ms total)
+[ PASSED ] 2 tests.
+===============================================================================
+UNIT TESTS: END
+===============================================================================
+
+===============================================================================
+UNIT TESTS: START --- >>>>> unittestLibraryExtension <<<<< --- 
+===============================================================================
+Running main() from /home/htc-ws-001-hm/Desktop/Workspace/dev/cxx/dependencies/googletest/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MockDependencyKundenDatenSpeichernVerfahren
+[ RUN ] MockDependencyKundenDatenSpeichernVerfahren.KundenDatenExtensionOpenFunktion
+Opening file for read/write operations.
+Closing text file with FD: 0
+Establishing connection with the cloud
+Closing the connection to the cloud with ID: 0
+Connecting to the Database:
+Closing the Database connection with ID: 0
+[ OK ] MockDependencyKundenDatenSpeichernVerfahren.KundenDatenExtensionOpenFunktion (0 ms)
+[----------] 1 test from MockDependencyKundenDatenSpeichernVerfahren (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[ PASSED ] 1 test.
+===============================================================================
+UNIT TESTS: END
+===============================================================================
+
+
+
+#############################################################
+Aufgabe3: Eine Konsolenapplikation für Kundendaten
+Check: Hinzufügen eines Kunden zum Archiv
+Check: Ausgeben der Kundendaten zu einer ID
+Check: Ausgeben der Liste aller gespeicherten Kundendaten
+#############################################################
+
+===============================================================================
+UNIT TESTS: START --- >>>>> unittestUserInputField <<<<< --- 
+===============================================================================
+Running main() from /home/htc-ws-001-hm/Desktop/Workspace/dev/cxx/dependencies/googletest/googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from KonsoleAnwendungUserInput
+[ RUN ] KonsoleAnwendungUserInput.FieldValidationCustomerID
+[ OK ] KonsoleAnwendungUserInput.FieldValidationCustomerID (7 ms)
+[ RUN ] KonsoleAnwendungUserInput.FieldValidationCityAndCustomerNames
+[ OK ] KonsoleAnwendungUserInput.FieldValidationCityAndCustomerNames (11 ms)
+[ RUN ] KonsoleAnwendungUserInput.FieldValidationZipCodes
+[ OK ] KonsoleAnwendungUserInput.FieldValidationZipCodes (4 ms)
+[ RUN ] KonsoleAnwendungUserInput.FieldValidationFavoriteColor
+[ OK ] KonsoleAnwendungUserInput.FieldValidationFavoriteColor (0 ms)
+[ RUN ] KonsoleAnwendungUserInput.FieldValidationDuplicateIDs
+[ OK ] KonsoleAnwendungUserInput.FieldValidationDuplicateIDs (4 ms)
+[----------] 5 tests from KonsoleAnwendungUserInput (28 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (28 ms total)
+[ PASSED ] 5 tests.
+===============================================================================
+UNIT TESTS: END
+===============================================================================
+
+===============================================================================
+UNIT TESTS: START --- >>>>> unittestKundenCli <<<<< --- 
+===============================================================================
+Running main() from /home/htc-ws-001-hm/Desktop/Workspace/dev/cxx/dependencies/googletest/googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from KonsoleAnwendungKundenDaten
+[ RUN ] KonsoleAnwendungKundenDaten.KundenDatenHinfugen
+[ OK ] KonsoleAnwendungKundenDaten.KundenDatenHinfugen (0 ms)
+[ RUN ] KonsoleAnwendungKundenDaten.DateinKundenFragen
+[ OK ] KonsoleAnwendungKundenDaten.DateinKundenFragen (0 ms)
+[ RUN ] KonsoleAnwendungKundenDaten.Kundenlookup
+[ OK ] KonsoleAnwendungKundenDaten.Kundenlookup (0 ms)
+[ RUN ] KonsoleAnwendungKundenDaten.DatenFormatted
+[ OK ] KonsoleAnwendungKundenDaten.DatenFormatted (0 ms)
+[ RUN ] KonsoleAnwendungKundenDaten.SaveKundenDaten
+[ OK ] KonsoleAnwendungKundenDaten.SaveKundenDaten (0 ms)
+[----------] 5 tests from KonsoleAnwendungKundenDaten (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[ PASSED ] 5 tests.
+===============================================================================
+UNIT TESTS: END
+===============================================================================
+
+
+
